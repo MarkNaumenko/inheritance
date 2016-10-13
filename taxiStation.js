@@ -21,14 +21,24 @@ var taxiStation = [
     renault = new Car(5,'c',62000),
     
     //initialization of special vehicles
-    police = new SpecialVehicle(),
-    ambulance = new SpecialVehicle(),
-    firecar = new SpecialVehicle()
+    // police = new SpecialVehicle(),
+    // ambulance = new SpecialVehicle(),
+    // firecar = new SpecialVehicle()
 
 ];
 
 taxiStation.sort(function(a, b) {
-    return parseInt(a.getFuelConsumption()) - parseInt(b.getFuelConsumption());
+    return parseInt(a.fuelConsumption) - parseInt(b.fuelConsumption);
 });
 
+var getTaxiStationFullPrice = function() {
+    var fullPrice = 0;
+    for (i = 0; i < taxiStation.length; i++) {
+        fullPrice += taxiStation[i].price;
+        console.log(taxiStation[i]);
+    }
+    return fullPrice;
+};
 
+console.log(taxiStation[0]);
+console.log(getTaxiStationFullPrice());
