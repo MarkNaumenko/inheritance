@@ -1,4 +1,6 @@
-var Vehicle = function () {};
+var Vehicle = function () {
+    this.fuelConsumption = null;
+};
 
 Vehicle.prototype = {
     
