@@ -2,7 +2,7 @@ var prompt = require('prompt'),
     Car = require('./Car.js'),
     Vehicle = require('./Vehicle.js'),
     SpecialVehicle = require('./SpecialVehicle.js'),
-    inherit = require('./inherit.js').inherit;
+    inherit = require('./inherit.js');
 
 //creation of taxi station
 var taxiStation = [
@@ -35,10 +35,45 @@ var getTaxiStationFullPrice = function() {
     var fullPrice = 0;
     for (i = 0; i < taxiStation.length; i++) {
         fullPrice += taxiStation[i].price;
-        console.log(taxiStation[i]);
     }
     return fullPrice;
 };
 
-console.log(Car instanceof Vehicle);
-//console.log(getTaxiStationFullPrice());
+console.log('\nFull price of station: ' + getTaxiStationFullPrice() + '\n');
+console.log('===================================');
+
+//read
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+const rl2 = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+var minFuel, maxFuel; //range of fuel values for samples
+
+rl.question('Input minFuel (filter range) ', (answer) => {
+    minFuel = answer;
+    rl.close();
+    rl2.question('Input maxFuel (filter range) ', (answer) => {
+        maxFuel = answer;
+        rl2.close();
+        console.log('Filtered list of cars:');
+        getCarsOfRange(taxiStation, minFuel, maxFuel);
+        console.log('===================================');    
+    });
+});
+
+var getCarsOfRange = function(array, minFuel, maxFuel) {
+    for (i = 0; i < array.length; i++) {
+        if (array[i].fuelConsumption <= maxFuel && array[i].fuelConsumption >= minFuel) {
+            console.log(array[i]);
+        }
+    }
+};
+
+

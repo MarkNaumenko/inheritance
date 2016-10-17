@@ -1,10 +1,12 @@
 var Vehicle = function () {
-    this.fuelConsumption = 0;
+
 };
 
 Vehicle.prototype = {
 
     price: 0,
+
+    fuelConsumption: 0,
     
     getFuelConsumption: function () {
         console.log(this.fuelConsumption);
