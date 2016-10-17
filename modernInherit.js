@@ -1,5 +1,7 @@
-var extendDeep = require('./extendDeep.js');
+var tiger = require('./tiger.js');
 
-var animal = {class: 'cats'},
-	tiger = extendDeep(animal);
 console.log(tiger.class);
+tiger.run();
+console.log('=======================');
+tiger.roar();
+tiger.roar2();

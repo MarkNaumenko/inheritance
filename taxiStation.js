@@ -21,9 +21,9 @@ var taxiStation = [
     renault = new Car(5,'c',62000),
     
     //initialization of special vehicles
-    // police = new SpecialVehicle(),
-    // ambulance = new SpecialVehicle(),
-    // firecar = new SpecialVehicle()
+    police = new SpecialVehicle(),
+    ambulance = new SpecialVehicle(),
+    firecar = new SpecialVehicle()
 
 ];
 
@@ -40,5 +40,5 @@ var getTaxiStationFullPrice = function() {
     return fullPrice;
 };
 
-console.log(taxiStation[0]);
-console.log(getTaxiStationFullPrice());
+console.log(Car instanceof Vehicle);
+//console.log(getTaxiStationFullPrice());
